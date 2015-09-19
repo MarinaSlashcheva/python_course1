@@ -1,15 +1,11 @@
-spisok = [int(i) for i in input().split()]
-sp1 = []
-sp2 = []
-for i in spisok:
-    sp1 = (sorted(spisok[0:len(spisok):2]))
-for j in spisok:
-    sp2 = (sorted(spisok[1:len(spisok):2], reverse=True))
+numbers = [int(i) for i in input().split()]
+num1 = (sorted(numbers[0:len(numbers):2]))
+num2 = (sorted(numbers[1:len(numbers):2], reverse=True))
 
 both = []
 i = 0
-while i < len(sp1):
-    both += [sp1[i], sp2[i]]
+while i < len(num1):
+    both += [num1[i], num2[i]]
     i += 1
 
 for i in both:

@@ -10,7 +10,6 @@ def prime(num):
             j = num % last_num
             if j == 0:
                 return False
-                break
             else:
                 last_num -= 1
                 if last_num > 1:

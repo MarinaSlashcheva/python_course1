@@ -1,3 +1,4 @@
+
 import collections
 string = input()
 dict = collections.Counter(string)

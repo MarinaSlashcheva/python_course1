@@ -102,14 +102,16 @@ for song in songs:
 word_dict = collections.Counter(name_word)
 word_dict = invert_my_dict(word_dict)
 
+
 n = 0
+word_list = []
 while n < 10:
     word = word_dict[max(word_dict.keys())]
     for i in word:
-        print(i, end='\t')
+        word_list.append(i)
     del(word_dict[max(word_dict.keys())])
     n += 1
-
+print('\t'.join(word_list))
 
 # Вывести на экран исполнителя с наибольшим числом альбомов
 albums = {}
@@ -126,5 +128,5 @@ for song in songs:
 
 albums_inv = invert_my_dict(albums)
 for i in albums_inv[max(albums_inv.keys())]:
-    print('\n', i)
+    print(i)
     break

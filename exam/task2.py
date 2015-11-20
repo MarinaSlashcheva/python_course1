@@ -1,15 +1,20 @@
+import math
 with open('dict.txt', 'r') as f:
     dict = f.read()
 dict = dict.split('\n')
-adj = []
-noun = []
-verb = []
+adj = 0
+noun = 0
+verb = 0
 for w in dict:
     if w[-2:] == 'yo':
-        adj.append(w)
+        adj += 1
     elif w[-2:] == 'ka':
-        noun.append(w)
+        noun += 1
     else:
-        verb.append(w)
+        verb += 1
+combinations = 0
+for num in range(0, adj):
+    combinations += math.factorial(adj)//math.factorial(num)
+all_comb = combinations * noun * verb
+print(all_comb)
 
-# TIME IS GOOONEEEE

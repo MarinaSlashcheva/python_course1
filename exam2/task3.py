@@ -3,6 +3,7 @@ from lxml import etree
 
 url = "https://twitter.com/googlefacts"
 data = requests.get(url).text
+#print(data)
 
 parser = etree.HTMLParser()
 tree = etree.fromstring(data, parser)

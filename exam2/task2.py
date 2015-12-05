@@ -4,6 +4,7 @@ import requests
 with open('links.txt', 'r') as f:
     text = f.read()
 links = text.split('\n')
+#print(links)
 contacts = []
 for link in links:
     page = requests.get(link).text

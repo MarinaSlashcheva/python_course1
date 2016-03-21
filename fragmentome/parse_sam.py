@@ -32,8 +32,5 @@ for read in sam:
 bed_file.close()
 print('Your BED is ready!')
 
-# 8 - length
-# 0 - name
-# 3 - start coordinate
-# 7 - coordinate of friend
-# 2 - chromosome
+# example command:
+# ./parse_sam.py filename 40 140

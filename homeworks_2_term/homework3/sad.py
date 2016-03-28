@@ -27,7 +27,8 @@ if command == 'store':
         print('copied a file')
     if os.path.isdir(path):
         where_to = home_path + path
-        run(['cp -r', path, where_to])
+        copy_command = 'cp -r ' + path + ' ' + where_to
+        run(copy_command, shell=True)
         print('copied a folder')
 
 if command == 'diff':

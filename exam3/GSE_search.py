@@ -24,7 +24,7 @@ if species == None:
 else:
     full_term = query + ' AND GSE[Entry Type] AND ' + species + '[Organism]'
 
-search = Entrez.esearch(db='gds', term=full_term)
+search = Entrez.esearch(db='gds', term=full_term, retmax=10000)
 result = Entrez.read(search)
 
 num_results = result['Count']
@@ -32,7 +32,7 @@ print('Founded {0} results containing {1}'.format(num_results, query))
 
 ids = result['IdList']
 for id in ids:
-    handle = Entrez.esummary(db='gds', id=id)
+    handle = Entrez.esummary(db='gds', id=id, )
     summary = Entrez.read(handle)
     cooked_output = summary[0]['Accession'], summary[0]['taxon'], summary[0]['title']
     print('\t'.join(cooked_output))

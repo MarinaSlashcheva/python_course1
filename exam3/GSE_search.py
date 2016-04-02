@@ -36,3 +36,5 @@ for id in ids:
     summary = Entrez.read(handle)
     cooked_output = summary[0]['Accession'], summary[0]['taxon'], summary[0]['title']
     print('\t'.join(cooked_output))
+
+# Example query ./GSE_search.py 'acinar cells' 'Homo Sapiens'

@@ -19,12 +19,15 @@ args = parser.parse_args()
 query = args.query
 species = args.species
 
+# query = 'acinar cells'
+# species = None
+
 if species == None:
     full_term = query + ' AND GSE[Entry Type]'
 else:
     full_term = query + ' AND GSE[Entry Type] AND ' + species + '[Organism]'
 
-search = Entrez.esearch(db='gds', term=full_term, retmax=10000)
+search = Entrez.esearch(db='gds', term=full_term, retmax=10000) # По дефорлту выводит 20 результатов в консоль, retmax выруливает
 result = Entrez.read(search)
 
 num_results = result['Count']

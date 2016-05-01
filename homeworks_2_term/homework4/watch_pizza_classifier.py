@@ -57,3 +57,20 @@ for classifier in algorithms:
         results.write(str(acc_score) + '\t')
         print('done for ' + classifier.__name__ + 'with n_estimators' + str(score) + ' ' + str(acc_score))
     results.write('\n')
+
+
+# I`ve got the biggest accuracy score (0.8684) with AdaBoostClassifier with n_estimators=300
+ada = AdaBoostClassifier(n_estimators=300)
+ada_train = ada.fit(train, train_y)
+
+predicted_y = ada_train.predict(validate)
+acc_score = accuracy_score(validate_y, predicted_y)
+print(acc_score)
+
+unknown = get_images('unknown')
+un_predicted = ada_train.predict(unknown)
+print(os.listdir('unknown'))
+print(un_predicted)
+
+# In this attempt accuracy score was 0.921
+# 28 from 37 pictures were right choice

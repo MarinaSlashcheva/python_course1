@@ -29,7 +29,7 @@ for file in files:
             counter[frag[ind]] += 1
 
         total_nucl = int(counter["A"]) + int(counter["C"]) + int(counter["G"]) + int(counter["T"])
-        out_table.write(str(ind + 1) + '\t' + str(counter['A']/total_nucl)[:5] + '\t' + str(counter['T']/total_nucl)[:5] + '\t' +
+        out_table.write(chr + '\t' + str(ind + 1) + '\t' + str(counter['A']/total_nucl)[:5] + '\t' + str(counter['T']/total_nucl)[:5] + '\t' +
                     str(counter['G']/total_nucl)[:5] + '\t' + str(counter['C']/total_nucl)[:5] + '\t' +
                     str(counter['G']/total_nucl + counter['C']/total_nucl)[:5] + '\n')
 
